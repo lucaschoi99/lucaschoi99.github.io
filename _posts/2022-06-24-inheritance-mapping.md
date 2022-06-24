@@ -19,7 +19,7 @@ categories: JPA ORM Mapping
 
 결론부터 말하자면, 세번째 TABLE_PER_CLASS 전략은 실무에서, 그리고 개인 프로젝트 시에도 사용하면 안된다. DB 설계와 ORM 구조 모두에서 장점보다 단점이 더 크기 때문이다. 여러 테이블을 함께 조회할때 UNION 이 필요하기 때문에 성능이 떨어지고, 하나의 필드를 기준으로 쿼리할 때에도 마찬가지로 모든 테이블을 모두 조회해야 하기 때문에 상당히 비효율적이다. 물론, 아무 신경쓰지 않고 명확하게 구분할 수 있으며 모든 필드에 not null을 설정할 수 있다는 장점은 존재한다. 그러나 단점이 훨씬 커보이는 것은 사실이다. 또, 단순히 개발자적 관점에서 볼때 중복 필드를 모으지 않고 따로 처리하는 것은 엄청난 시간적, 공간적 낭비가 아닐 수 없다.
 
-![image-20220625012737574]
+<img width="662" alt="image-20220625014649007" src="https://user-images.githubusercontent.com/73485743/175604771-98d8137d-7c41-430b-bdc4-1d7e97297de1.png">
 
 **[TABLE_PER_CLASS 전략: 사용하지 말 것]**
 
@@ -28,8 +28,8 @@ categories: JPA ORM Mapping
    먼저 JOINED 전략은 JPA 상속 구조와 가장 유사하다. 상속받는 클래스와 각 테이블의 필드를 PK, FK로 연결시켜 구현하면 된다. Spring boot 에서 이 전략을 사용하려면 상속받을 클래스에 '@Inheritance(strategy=InheritanceType.JOINED)' 어노테이션을 달아주면 된다. 또한 DTYPE으로 각 테이블을 구별해 줄 필요가 있다면, 예를 들어 상속받는 클래스 ITEM의 필드에 DTYPE 필드를 넣어주어야 상속하는 클래스들 (ALBUM, MOVIE, BOOK ...) 의 데이터를 관리할 수 있는 설계라면, 상속받을 클래스 (여기서는 abstract class ITEM)에 '@DiscriminatorColumn' 어노테이션을 달아주면 해결된다.
 
    또한 이 전략은 저장공간을 효율적으로 관리할 수 있다는 장점도 있다. 다만 단점은 데이터 저장 시에 INERT 쿼리가 2번씩 나가고, 조회 시에 JOIN 쿼리를 많이 사용하게 되어 성능 저하 이슈가 있다는 점이다. 그러나 테이블끼리 JOIN 쿼리가 체계적으로 나가도록 설계를 하면 그렇게 성능에 critical한 문제는 되지 않을 것 같다.
-
-![image-20220625011918525](/Users/choi/Library/Application Support/typora-user-images/image-20220625011918525.png)
+   
+<img width="650" alt="image-20220625011918525" src="https://user-images.githubusercontent.com/73485743/175604979-67ec7f88-f5d5-4f55-93b6-a887413bc1e9.png">
 
 **[JOINED TABLE 전략]**
 
@@ -39,7 +39,7 @@ categories: JPA ORM Mapping
 
    아무래도 하나의 테이블에 모든 데이터를 저장하기 때문에 프로젝트 규모가 커지게 되면 테이블도 따라서 매우 커질 수 있다. 따라서 상황에 따라서 조회 성능이 느려질 수 있는 경우가 생기는데 그 상황이 오면 앞의 JOINED 전략과 SINGLE_TABLE의 전략 중에서 장점과 단점을 살펴보고 무엇을 선택할지 다시 고려해보는 것이 좋을 것이다.
 
-![image-20220625012714493](/Users/choi/Library/Application Support/typora-user-images/image-20220625012714493.png)
+<img width="574" alt="image-20220625012714493" src="https://user-images.githubusercontent.com/73485743/175605068-49610a28-f04e-4d42-9b06-4fa8f913550c.png">
 
 **[SINGLE_TABLE 전략]**
 
@@ -47,7 +47,7 @@ categories: JPA ORM Mapping
 
    마지막으로 Spring에서 단순하게 공통 매핑 정보를 위해서 상속관계 형태의 매핑을 사용하고 싶다면 @MappedSuperclass 어노테이션을 사용하면 된다. 이 방법은 부모 클래스의 필드를 상속 받는 자식 클래스에 매핑 정보만 제공하는 것이다. 따라서 상속할 BaseEntity class를 abstract class로 만들고 공통으로 사용할 매핑 정보를 모아주면 된다. (이 클래스는 @Entity와 전혀 다른 개념이기 때문에 상위 클래스로 조회, 검색 (ex. em.find(BaseEntity) 이런 식의 코드 작성은 불가능하다.)
 
-![image-20220625013332705](/Users/choi/Library/Application Support/typora-user-images/image-20220625013332705.png)
+<img width="514" alt="image-20220625013332705" src="https://user-images.githubusercontent.com/73485743/175605139-da22477a-96d2-4ce2-93d5-4abb2c2666b2.png">
 
 **[@MappedSuperclass 를 사용하는 경우]**
 
