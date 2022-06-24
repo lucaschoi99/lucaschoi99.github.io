@@ -15,8 +15,8 @@ categories: JPA ORM Mapping
    - **JOINED 전략:** 공통된 속성을 하나의 abstract class로 받고, 이를 상속한 각각의 테이블로 구현
    - **SINGLE_TABLE 전략:** 모든 속성을 하나의 커다란 통합 테이블로 구현
    - **TABLE_PER_CLASS 전략:** 중복된 속성이 있어도 각각의 구현 클래스마다 테이블 만들기
-- - -
 
+- - -
 ## TABLE_PER_CLASS 전략
 
 결론부터 말하자면, TABLE_PER_CLASS 전략은 실무에서, 그리고 개인 프로젝트 시에도 사용하면 안된다. DB 설계와 ORM 구조 모두에서 장점보다 단점이 더 크기 때문이다.
