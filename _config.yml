@@ -105,7 +105,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "TIL"
+  name             : "Today I Learned"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "하루에 한 개씩 쌓여가는 개발지식"
   location         : "Seoul, Korea"
