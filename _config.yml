@@ -105,9 +105,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "최민수의 블로그"
+  name             : "TIL"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "하루에 한개씩 쌓여가는 개발지식"
+  bio              : "하루에 한 개씩 쌓여가는 개발지식"
   location         : "Seoul, Korea"
   email            :
   links:
