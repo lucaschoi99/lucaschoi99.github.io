@@ -1,6 +1,6 @@
 ---
 title: "[JPA ORM] 프록시(Proxy) 매커니즘"
-date: 2022-06-25
+date: 2022-06-25 01:10:28
 categories: JPA ORM Proxy
 
 
