@@ -15,8 +15,6 @@ categories: JPA ORM Mapping
    - **JOINED 전략:** 공통된 속성을 하나의 abstract class로 받고, 이를 상속한 각각의 테이블로 구현
    - **SINGLE_TABLE 전략:** 모든 속성을 하나의 커다란 통합 테이블로 구현
    - **TABLE_PER_CLASS 전략:** 중복된 속성이 있어도 각각의 구현 클래스마다 테이블 만들기
-
-
 - - -
 
 ## TABLE_PER_CLASS 전략
@@ -30,6 +28,7 @@ categories: JPA ORM Mapping
 <img width="662" alt="image-20220625014649007" src="https://user-images.githubusercontent.com/73485743/175604771-98d8137d-7c41-430b-bdc4-1d7e97297de1.png">
 
 **[TABLE_PER_CLASS 전략: 사용하지 말 것]**
+
 - - -
 ## JOINED 전략
 
@@ -44,6 +43,7 @@ categories: JPA ORM Mapping
 <img width="650" alt="image-20220625011918525" src="https://user-images.githubusercontent.com/73485743/175604979-67ec7f88-f5d5-4f55-93b6-a887413bc1e9.png">
 
 **[JOINED TABLE 전략]**
+
 - - -
 ## SINGLE_TABLE 전략
    단일 테이블 전략은 말 그대로 모든 테이블에 들어갈 필드를 하나의 큰 테이블에 모두 모아 만드는 방법이다. 이렇게 되면 테이블끼리의 JOIN 쿼리가 필요 없으므로 조회 성능이 빠르다는 장점이 있다. 그러나 특정 테이블에 없는 필드는 모두 null을 허용하고 넣어주어야 한다.
