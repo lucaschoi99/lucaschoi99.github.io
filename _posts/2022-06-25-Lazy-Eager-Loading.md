@@ -1,6 +1,6 @@
 ---
 title: "[JPA ORM] 지연 로딩(LAZY)과 즉시 로딩(EAGER)"
-date: 2022-06-25
+date: 2022-06-25 12:07:08
 categories: JPA ORM Proxy Lazy Eager
 ---
 
