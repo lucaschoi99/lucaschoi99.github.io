@@ -6,7 +6,7 @@ categories: JPA ORM Embedded Collections
 
 ## JPA 데이터 타입의 분류
 
-JPA가 제공하는 데이터 타입은 크게 2가지로 나눌 수 있다.
+JPA가 제공하는 데이터 타입은 크게 2가지로 나눌 수 있다. (Entity type, Value type)
 
 - 엔티티(Entity) 타입
 
@@ -14,7 +14,7 @@ JPA가 제공하는 데이터 타입은 크게 2가지로 나눌 수 있다.
 
   또한 클래스 속성들의 Lifecycle은 포함된 Entity 클래스에 의존하게 된다.
 
-- 값 타입
+- 값 타입 (Value type)
 
   단순히 값으로써 사용하는 자바 타입이나 객체를 뜻한다. 식별자가 없으므로 데이터 변경에 추적이 불가하다는 특징이 있다.
 
