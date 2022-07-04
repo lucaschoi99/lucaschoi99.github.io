@@ -1,5 +1,5 @@
 ---
-title: "[DB 설계] 토이 프로젝트"
+title: "[Background] 토이 프로젝트"
 date: 2022-07-04 21:36:08
 categories: DB Table Mapping
 
