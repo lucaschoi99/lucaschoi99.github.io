@@ -1,4 +1,4 @@
-# ⭐️ Spring MVC-2 (22.10.2 ~ )
+# ⭐️ Spring MVC-2
 
 1. Thymeleaf - SSR (Server-side HTML Rendering) 템플릿 엔진
     - HTML을 유지하기 때문에 웹 브라우저에서 직접 열어도 깨지지 않음.
