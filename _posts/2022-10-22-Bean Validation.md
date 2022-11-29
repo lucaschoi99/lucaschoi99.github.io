@@ -1,6 +1,4 @@
-# ⭐️ Spring MVC-2
-
-## Bean Validation (Bean 검증)
+# Bean Validation (Bean 검증)
 - 일일히 검증 로직 짜는건 비효율적 → `@NotBlank`, `@NotNull`, `@Range` 등 공통된 검증 사용 가능.
 - 따라서, annotation으로 깔끔하게 해결.
 - build.gradle 에 `implementation 'org.springframework.boot:spring-boot-starter-validation'` 추가.
